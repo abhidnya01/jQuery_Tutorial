@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+   $(document).ready(function() {
+      $("li:first,li:last,p:first-of-type").click(function() {alert("Hello, world!");});
+      $("p").click(function(){
+  $(this).hide();
+  });
+      $(".C1").click(function(){
+        $(".C1").hide();
+      });
+      $("#next").click(function(){
+        $("p").hide();
+      });
+      $("#back").click(function(){
+        $("p").show();
+      });
+
+  $("tr").dblclick(function(){
+  $(this).hide();
+});
+$("#sh").mouseenter(function(){
+  alert("You entered Shubham!");
+});
+$("#gt").mouseleave(function(){
+  alert("Bye! You now leave Gaurav!");
+})
+$("#pp").mousedown(function(){
+  alert("Mouse down over Patel!");
+});
+$("#aa").mousedown(function(){
+  alert("Mouse down over Aryan!");
+});
+$("#tr").hover(function(){
+  alert("You entered Omkar!");
+},
+function(){
+  alert("Bye! You now leave Omkar!");
+});
+$("#pr").focus(function(){
+  $(this).css("background-color", "#cccccc");
+});
+
+
+
+   });
+</script>
+</head>
+<body>
+<div>Click on this to see a dialogue box.</div>
+<p></p>
+<ol>
+    <li id="sh">shuhbham</li>
+    <li id="gt">gaurav</li>
+    <li id="pp">pratik patel</li>
+    <li  id="aa">aaryan</li>
+    <li  id="om">Omkar</li>
+    <li  id="pr">Prathamesh</li>
+</ol>
+<table>
+<tr>
+    <th>sr no</th>
+    <th>Name</th>
+    <th>Roll No</th>
+</tr>
+<tr>
+    <td>01</td>
+    <td>Gaurav</td>
+    <td>A052</td>
+</tr>
+<tr>
+    <td>02</td>
+    <td>Shubham</td>
+    <td>A036</td>
+</tr><tr>
+  <td>03</td>
+  <td>Omkar</td>
+  <td>A009</td>
+</tr>
+</table>
+<p>This paragraph is the first child of its parent (body).</p>
+<p>This paragraph is not the first child of its parent (body).</p>
+
+<div>
+  <p>This paragraph is the 1first child of its parent (div).</p>
+  <p>This paragraph is not the first child of its parent (div).</p>
+</div>
+
+<div>
+    <p>This paragraph is the 2first child of its parent (div).</p>
+    <p>This paragraph is not the first child of its parent (div).</p>
+  </div>
+
+  <div>
+    <p>This paragraph is the 3first child of its parent (div).</p>
+    <p>This paragraph is not the first child of its parent (div).</p>
+
+  </div>
+
+  
+<p class="C1">If you click on the "next" button, i will disappear.</p>
+
+<button id="next">next</button>
+<button id="back">back</button>
+
+
+</body>
+</html>

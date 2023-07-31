@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.2.1.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+      $("#id1").click(function(){
+         
+         alert($("#id0").text());
+      });
+      $("#id2").click(function(){
+         alert($("P").text());
+      });
+      $("#id3").click(function(){
+         alert($("#id0").html());
+      });
+      $("#b1").click(function(){
+         alert($("#n1").val());
+      });
+      $("#b2").click(function(){
+         alert($("#n2").val());
+      });
+      $("#b3").click(function(){
+         $("#n3").val("Gaurav");
+      });
+      $("button").click(function(){
+         $(".div").append("<p>Gaurav Tukrul</p>");
+    });
+    </script>
+</head>
+<body>
+<P id="id0"> FFUWFHNO<br></bt>AIUEWGAIU<br>EGIAEGNIUREHNGIU<br>EGNEANGAEN</P>
+<h2>Remove an HTML Element</h2>
+<button id="id1">Hello <br>Shubham</button>
+<button  id="id2">Hello Gaurav</button>
+<button id="id3">Hello omKAR</button>
+
+<p>
+    Name:<input type="text" id="n1" value="Gaurav">
+</p>
+<p>
+    Name:<input type="text" id="n2" value="Shubham">
+</p>
+
+<button id="b1">Get First Student Name</button>
+<button id="b2">Get Second Student Name</button>
+
+<div>
+    <p id="p0"></p>
+    Name:<input type="text" id="n3" >
+<button id="b3">Set Value</button>
+</div>
+<div class="div1">
+    
+    </div>
+</body>
+</html>
