@@ -4,19 +4,33 @@
 <script src="jquery-3.2.1.min.js"></script>
 <script> 
 $(document).ready(function(){
-  $("button").click(function(){
+  $("#b1").click(function(){
+    $("#p1").css("color","green" ).slideUp(1000).slideDown(1000);
+  });
+  $("#b2").click(function(){
     $("div").animate({right: '1250px'});
   });
+  
 });
 </script> 
 </head>
 <body>
+  <div>
+  <p id="p1">"Chaining "</p>
+  <button id="b1"> Click Here
+  </button>
 
-<button>Start Animation</button>
+</div>
 
-<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+<button id="b2">Start Animation</button>
+
+
+
+<div>
+  <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
 
 <div style="background:#98bf21;height:100px;width:100px;position:fixed;  right: 0;"></div>
-
+ 
+</div>
 </body>
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#b1").click(function(){
+    $("#p1").append(" <b>Appended text</b>.");
+  });
+
+  $("#b2").click(function(){
+    $("#L1").append("<li>Appended item</li>");
+  });
+  $("#b3").click(function(){
+    $("#p3").prepend(" <b>prepend text</b>.");
+  });
+
+  $("#b4").click(function(){
+    $("#L2").prepend("<li>prepend item</li>");
+  });
+  $("#b5").click(function(){
+    $("#L2").remove();
+  });
+  $("#b6").click(function(){
+    $("#d1").remove();
+  });
+  
+});
+</script>
+</head>
+<body>
+<div id="d1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">Append List:</p>
+
+<ol id="L1">
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ol>
+
+<button id="b1">Append text</button>
+<button id="b2">Append list items</button>
+</div>
+
+<div>
+  <p id="p3">This is a paragraph.</p>
+  <p id="p4">This is another paragraph.</p>
+  
+  <ol id="L2">
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </ol>
+  
+  <button id="b3">Prepend text</button>
+  <button id="b4">Prepend list items:</button>
+  </div>
+  
+
+  <div>
+    <button id="b5">Remove</button>
+  </div>
+  <div>
+    <button id="b6">Empty</button>
+  </div>
+</body>
+</html>
