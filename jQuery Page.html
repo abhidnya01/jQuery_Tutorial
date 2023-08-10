@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Object from JSON</title>
+<script>
+// Import the JSON module
+const json = require("json");
+
+// Define the JSON data as a string
+const json_data = 
+{
+  "name": "Joh Doe",
+  "age": 30,
+  "hobbies": ["coding", "reading", "hiking"]
+}
+;
+
+// Parse the JSON data into a JavaScript object
+const data = json.parse(json_data);
+
+// Display the name of the person
+document.getElementById("name").innerHTML = data["name"];
+
+// Display the age of the person
+document.getElementById("age").innerHTML = data["age"];
+
+// Display the hobbies of the person
+const hobbies = data["hobbies"];
+const hobbies_html = hobbies.map(hobby => <li>${hobby}</li>).join("");
+document.getElementById("hobbies").innerHTML = hobbies_html;
+</script></head>
+<body>
+
+
+<h1>Create Object from JSON</h1>
+<p>The name of the person is:</p>
+<div id="name"></div>
+<p>The age of the person is:</p>
+<div id="age"></div>
+<p>The hobbies of the person are:</p>
+<ul id="hobbies"></ul>
+</body>
+</html>

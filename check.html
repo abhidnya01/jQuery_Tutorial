@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>The jQuery Example</title>
+<script type="text/javascript" src="jquery-3.2.1.min.js">
+</script>
+
+<script type="text/javascript" language="javascript">
+$(document).ready(function()
+{
+    $(".myclass").click(function(){
+    $("#hdln").hide();         
+                                  });
+
+    $("#myid").mouseenter(function(){
+    $("#Buttonid").hide();
+                                    });
+    $("#hitler").mouseenter(function(){
+    alert("He is Hitler");
+                                   });
+    $("*").dblclick(function(){
+    $(this).hide();
+                                   });
+    $("input").focus(function(){
+    $(this).css("background-color", "yellow");
+                                   });
+    $("#frstspc").blur(function(){
+    $(this).css("background-color", "orange");
+                                   });                               
+    $("#scndspc").blur(function(){
+    $(this).css("background-color", "white");
+                                   });
+    $("#thrdspc").blur(function(){
+    $("this").css("background-color", "green");
+                                   });
+    $("#subm").click(function(){
+      $(".f1").hide();        
+                                   });
+    $("#Refresh").mouseenter(function(){
+    alert("Click on that button to refresh it");
+                                    });
+
+    $("#Refresh").click(function(){
+    $("*").fadeToggle();
+                                   });
+    $("#Animate").click(function(){
+    var div = $("*");
+    div.animate({height: '300px', opacity: '1'}, "slow");
+    div.animate({width: '300px', opacity: '0.1'}, "slow");
+    div.animate({height: '100px', opacity: '3.4'}, "slow");
+    div.animate({width: '100px', opacity: '0.8'}, "slow");
+  });
+
+});
+</script>
+
+	<body>
+
+<h2>Anything click twice on this page will hide entire page </h2>
+<p class="myclass">@#</p>
+
+<p id="hdln"><b>Hide line by cliking on @#</b></p>
+
+<button id="Buttonid">This is button id="myid"</button>
+
+<br>
+<form class="f1">
+<p id="myid">Hide button by hovering on it</p>
+Name: <input id="frstspc" type="text" name="fullname"><br>
+Email: <input id="scndspc" type="text" name="email"><br>
+Phone: <input id="thrdspc" type="text" name="email"><br>
+<button value="Refresh" id="Refresh">Refresh</button>
+</form>
+<hr> 
+<hr>
+<a href="https://www.google.com/">
+<img src="C:\Users\Lenovo\Downloads\download.jfif" alt="Google Logo" id="hitler">
+</a>
+<hr>
+
+<form >
+<input type="text" name="name" id="name-input">
+</form>
+<button value="Refresh" id="Animate">Animate</button>
+<table id="table" border="1"> 
+<tr id="row-1">
+<th id="column-1">Column 1</th>
+<th id="column-2">Column 2</th>
+</tr>
+<tr id="row-2">
+<td id="cell-1">Row 1, Column 1</td>
+<td id="cell-2">Row 1, Column 2</td>
+</tr>
+<tr id="row-3">
+<td id="cell-3">Row 2, Column 1</td>
+<td id="cell-4">Row 2, Column 2</td>
+</tr>
+</table>
+
+<div class="container" id="container">
+  <h2 id="division-heading">This is a division</h2>
+  <p id="division-paragraph">This is some text inside the division.</p>
+</div>
+</body>
+</html>
