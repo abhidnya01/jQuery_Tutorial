@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="jquery-3.7.0.min.js"></script>
+<script>
+   $(document).ready(function() {
+      $("div1").click(function(){
+         alert('Hi there!');
+      });
+   });
+
+   $(document).ready(function() {
+      $("div2").dblclick(function(){
+         alert('Hi there!');
+      });
+   });
+
+   $(document).ready(function() {
+      $("div3").mouseenter(function(){
+         alert('Cursor is in!');
+      });
+   });
+
+   $(document).ready(function() {
+      $("div4").mouseleave(function(){
+         alert('Curosr is out!');
+      });
+   });
+
+   $(document).ready(function() {
+      $("div5").mousedown(function(){
+         alert('Mouse button is down!');
+      });
+   });
+
+   $(document).ready(function() {
+      $("div6").mouseup(function(){
+         alert('Mouse button is released!');
+      });
+   });
+</script>
+<style>
+    div1{ margin:10px;padding:12px; border:2px solid #666; width:60px;cursor:pointer}
+    div2{ margin:10px;padding:12px; border:2px solid #666; width:60px;cursor:pointer}
+    div3{ margin:10px;padding:12px; border:2px solid #666; width:60px;cursor:pointer}
+    div4{ margin:10px;padding:12px; border:2px solid #666; width:60px;cursor:pointer}
+    div5{ margin:10px;padding:12px; border:2px solid #666; width:60px;cursor:pointer}
+    div6{ margin:10px;padding:12px; border:2px solid #666; width:60px;cursor:pointer}
+ </style>
+</head>
+<body>
+   <h1>Click on any of the squares to see the result:</h1>
+
+   <div1>One</div1>
+   <div2>Two</div2>
+   <div3>Three</div3>
+   <div4>four</div4>
+   <div5>five</div5>
+   <div6>six</div6>
+</body>
+</html>
