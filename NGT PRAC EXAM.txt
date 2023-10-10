@@ -1,0 +1,29 @@
+use moobileshop   // create database
+db.Mobile.insert({"name":"samsung","price":90000})    // insert one
+
+
+ db.Mobile.insertMany( [{"name":"samsung","price":90000},{"name":"vivo","price":900},{"name":"as","price":9000}])   //  insert many
+
+
+
+db.Mobile.find()  // collecetion bhagay
+
+
+
+ db.Mobile.update({"name":"samsung"},{$set:{"price":80000}}) // update content of collections
+
+
+db.Mobile.drop() // Drop The Collection
+
+
+
+db.dropDatabase() // drop database
+
+
+db.users.update({"Gender":"F"},{$set:{"Country":"UK"}},{multi:true}) // Multiple info update karaychi asel ter
+
+
+db.admin.update({},{$set:{"Company":"TestComp"}},{multi:true} // sagli kadh update karaycha asel ter
+
+
+db.admin.update({},{$unset:{"ïd":""}},{multi:true}) // remove
