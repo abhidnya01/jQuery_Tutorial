@@ -1,0 +1,9 @@
+pymongo import MongoClient
+client=MongoClient("mongodb://localhost:27017/") 
+print(client.list_database_names()) 
+mydb=client["service"] 
+mycol=mydb["order"] 
+x= mycol.insert_many([( "name": "balu", "experience": "none" ), ("name": "shree"]) #
+print(mydb.list_collection_ names())
+y=mycol.delete_one("painter_name":"gaurav") 
+z=mycol.update_ one(("painter_name": "shubham"), ("Sset": ("painter _ name": "balkrishna"]
