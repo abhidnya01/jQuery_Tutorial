@@ -1,0 +1,196 @@
+
+use PODdb
+show dbs
+
+insert :
+
+ db.customer.insert({"name":"abhi","ïd":01})
+
+inserMany:
+
+
+db.customer.insertMany([{"name":"abhi","ïd":01},{ "name":"omkar","ïd":02},{"name":"shubham","ïd":03}] )
+
+
+
+show collections
+
+db.customer.find().pretty()
+
+
+
+update:
+
+
+PODdb>          db.admin.update({"name":"shubh"},{$set:{"id":80000}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+PODdb> db.admin.find().pretty()
+[
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc1"),
+    name: 'abhishek',
+    'ïd': 1
+  },
+  { _id: ObjectId("6523f9cea7ca370fc1c8afc2"), name: 'om', 'ïd': 2 },
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc3"),
+    name: 'shubh',
+    'ïd': 3,
+    id: 80000
+  }
+
+
+
+ update alll:
+
+
+db.admin.update({},{$set:{"Company":"TestComp"}},{multi:true})
+
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+PODdb> db.admin.find()
+[
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc1"),
+    name: 'abhishek',
+    'ïd': 1,
+    Company: 'TestComp'
+  },
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc2"),
+    name: 'om',
+    'ïd': 2,
+    Company: 'TestComp'
+  },
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc3"),
+    name: 'shubh',
+    'ïd': 3,
+    id: 80000,
+    Company: 'TestComp'
+  }
+
+
+
+$unset:
+
+
+db.admin.update({},{$unset:{"ïd":""}},{multi:true})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+PODdb> db.admin.find()
+[
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc1"),
+    name: 'abhishek',
+    Company: 'TestComp'
+  },
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc2"),
+    name: 'om',
+    Company: 'TestComp'
+  },
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc3"),
+    name: 'shubh',
+    id: 80000,
+    Company: 'TestComp'
+  }
+]
+
+
+
+drop collection:
+
+
+
+ db.abhidnya.insert({"name":"abhi","ïd":01})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6523fe33a7ca370fc1c8afc5") }
+}
+PODdb> show collections
+abhidnya
+admin
+customer
+PODdb> db.abhidnya.drop()
+true
+PODdb> show collections
+admin
+customer
+
+
+
+drop database:
+
+
+PODdb> use abhi
+
+switched to db abhi
+abhi> show dbs
+PODdb   128.00 KiB
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+
+abhi> db.dropDatabase()
+{ ok: 1, dropped: 'abhi' }
+
+
+
+
+remove:
+
+
+
+
+ db.admin.remove({"name":"abhishek"})
+DeprecationWarning: Collection.remove() is deprecated. Use deleteOne, deleteMany, findOneAndDelete, or bulkWrite.
+{ acknowledged: true, deletedCount: 1 }
+PODdb> db.admin.find()
+[
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc2"),
+    name: 'om',
+    Company: 'TestComp'
+  },
+  {
+    _id: ObjectId("6523f9cea7ca370fc1c8afc3"),
+    name: 'shubh',
+    id: 80000,
+    Company: 'TestComp'
+  }
+
+
+
+
+aggregate:
+
+
+sanskriti> db.students.aggregate([{ $group: { _id: null, totalQuantity: { $sum: "$age" } } }]);
+
+[ { _id: null, totalQuantity: 112 } ]
+sanskriti> db.students.aggregate([{ $group: { _id: null, a: { $sum: "$age" } } }]);
+[ { _id: null, a: 112 } ]
+sanskriti> db.students.aggregate([{ $group: { _id: null, a: { $avg: "$age" } } }]);
+[ { _id: null, a: 18.666666666666668 } ]
+sanskriti> db.students.aggregate([{ $group: { _id: null, a: { $min: "$age" } } }]);
+[ { _id: null, a: 12 } ]
+sanskriti> db.students.aggregate([{ $group: { _id: null, a: { $max: "$age" } } }]);
+[ { _id: null, a: 20 } ]
