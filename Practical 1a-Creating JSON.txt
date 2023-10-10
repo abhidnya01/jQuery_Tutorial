@@ -1,0 +1,20 @@
+/Practical 1a:-Creating JSON
+
+
+//Create a json Objects and save the file with a  .json extension
+[
+  {
+    "Customer1": {
+      "C_Id": "C002",
+      "C_Age": "21",
+      "C_fname": "Omkar"
+    }
+  },
+  {
+    "Customer2": {
+      "C_Id": "C003",
+      "C_Age": "22",
+      "C_fname": "Prathamesh"
+    }
+  }
+]

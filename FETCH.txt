@@ -1,0 +1,28 @@
+// Create a JSON file
+createjson.json file:-
+
+[{ "C_Id": "C002","C_Age": "21", "C_fname": "Omkar"},
+{"C_Id": "C003","C_Age": "22","C_fname": "Prathamesh"}]
+
+
+html file
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+       fetch('./createjson.json')
+  .then(response => response.json()) // Corrected typo here: "response" instead of "responce"
+  .then(json => console.log(json));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

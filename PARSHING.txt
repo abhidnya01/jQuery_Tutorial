@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    
+    <title>json parsing</title>
+</head>
+<body>
+    <div id="one"></div>
+</body>
+<script>
+    //creating data as a  string
+    var jsondata= `{ 
+        "stu1":{"name":"xyz", "age":20 , "hobbies":["dancing","playing"], "marks":[{"eng":10},{"mar":25}] },
+        "stu2":{"name":"abc"}
+    }`
+    
+    
+    //parse the jsomn data
+    var parseddata=JSON.parse(jsondata);
+
+    //displaying parsed data
+    document.getElementById("one").innerHTML+="name:"+ parseddata["stu1"]["name"]+ "<br>";
+   document.getElementById("one").innerHTML +="hobbies:"+ parseddata["stu1"]["hobbies"][0]+"<br>";
+    document.getElementById("one").innerHTML +="hobbies:"+ parseddata["stu1"]["hobbies"][1]+"<br>";
+   document.getElementById("one").innerHTML += "age:"+parseddata["stu1"]["age"] + "<br>";
+    document.getElementById("one").innerHTML += "marks:" +parseddata["stu1"]["marks"][0]["eng"]+ "<br>";
+    document.getElementById("one").innerHTML += "name is:" +parseddata["stu2"]["name"];
+    
+
+    </script>
+</html>
