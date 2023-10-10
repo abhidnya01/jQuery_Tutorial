@@ -1,0 +1,10 @@
+anskriti> db.students.aggregate([{ $group: { _id: null, totalQuantity: { $sum: "$age" } } }]);
+[ { _id: null, totalQuantity: 112 } ]
+sanskriti> db.students.aggregate([{ $group: { _id: null, a: { $sum: "$age" } } }]);
+[ { _id: null, a: 112 } ]
+sanskriti> db.students.aggregate([{ $group: { _id: null, a: { $avg: "$age" } } }]);
+[ { _id: null, a: 18.666666666666668 } ]
+sanskriti> db.students.aggregate([{ $group: { _id: null, a: { $min: "$age" } } }]);
+[ { _id: null, a: 12 } ]
+sanskriti> db.students.aggregate([{ $group: { _id: null, a: { $max: "$age" } } }]);
+[ { _id: null, a: 20 } ]
